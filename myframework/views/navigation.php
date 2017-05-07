@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <?php
                         foreach ($data as $key => $value) {
-                            echo '<li>
+                            echo '<li class="">
                                  <a href = "' .$value. '" >' .$key. '</a> 
                                  </li>';
                         }
