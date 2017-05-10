@@ -23,6 +23,5 @@
     <!-- Theme CSS -->
     <link href="../assets/css/agency.min.css" rel="stylesheet">
 
-
 </head>
 

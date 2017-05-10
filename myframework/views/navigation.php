@@ -24,4 +24,6 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
+        <div class="container">
     </nav>
+

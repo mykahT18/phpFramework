@@ -10,7 +10,7 @@ class AppController{
 
 		if($urlPathParts[0]){
 
-			if($urlPathParts[0] == "assets"){
+			if($urlPathParts[0] == "assets" || $urlPathParts[0] == "images"){
 				
 				echo $urlPathParts[0];
 
@@ -22,9 +22,12 @@ class AppController{
 
 			$appcon = new $urlPathParts[0]($this);
 
-				if(isset($urlPathParts[1])){
+
+				if(isset($urlPathParts[1]) && $urlPathParts[1]  !== ""){
 
 					$appcon->$urlPathParts[1]();
+
+
 				}
 				else{
 					$methodVariable = array($appcon, 'index');
