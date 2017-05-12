@@ -218,6 +218,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../assets/js/agency.min.js"></script>
+    <script src="../assets/js/main.js"></script>
 
     <!-- <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script> -->
 

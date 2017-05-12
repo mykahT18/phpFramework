@@ -1,8 +1,8 @@
 <?
 
+
+session_start();
 class AppController{
-
-
 	public function __construct($urlPathParts,$config){
 
 		// db information
@@ -23,10 +23,9 @@ class AppController{
 			$appcon = new $urlPathParts[0]($this);
 
 
-				if(isset($urlPathParts[1]) && $urlPathParts[1]  !== ""){
+				if(isset($urlPathParts[1]) && $urlPathParts[1] !=""){
 
 					$appcon->$urlPathParts[1]();
-
 
 				}
 				else{
@@ -58,7 +57,7 @@ class AppController{
 		}
 	}
 
-	public function getView($page,$data=array()){
+	public function getView($page,$data=array(),$info=""){
 
 		require_once './views/'.$page.".php";
 

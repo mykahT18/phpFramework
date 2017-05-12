@@ -1,29 +1,56 @@
 <?php echo $data; ?>
-<h2>PopOver Top Button</h2>
-<button id="pop" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top</button> 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner" role="listbox">
-    <div class="item active item-active">
-      <img class="d-block img-fluid" src="http://placehold.it/2500x500?text=slide1" alt="First slide">
-    </div>
-    <div class="item">
-      <img class="d-block img-fluid" src="http://placehold.it/2500x500?text=slide2" alt="Second slide">
-    </div>
-    <div class="item">
-      <img class="d-block img-fluid" src="http://placehold.it/2500x500?text=slide3" alt="Third slide">
-    </div>
+<form action="/welcome/reciveContact" method="POST" id="myForm">
+  <div class="form-group">
+    <label for="example-text-input" class="col-2 col-form-label">Name</label>
+  <div class="col-10">
+    <input class="form-control" type="text" name="name" id="example-text-input" required>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-<h2>Progress Bar</h2>
-<div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-</div>
+  </div>
+  <div class="form-group">
+     <label for="example-text-input" class="col-2 col-form-label">Subject</label>
+    <div class="col-10">
+    <input class="form-control" type="text" name="subject" id="example-text-input" required>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1">How long will the prject take?</label>
+    <select class="form-control" id="exampleSelect1" name="time">
+      <option>2 weeks</option>
+      <option>1 month</option>
+      <option>1 to 2 months</option>
+      <option>6 months</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleTextarea">Project Description</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3" required></textarea>
+  </div>
+  <fieldset class="form-group">
+    <legend>Focus of project</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="Development" checked>
+        Development
+      </label>
+    </div>
+    <div class="form-check">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="Design">
+        Design 
+      </label>
+    </div>
+    <div class="form-check disabled">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="Social Media">
+        Social Media
+      </label>
+    </div>
+  </fieldset>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" name="check" value="Yes">
+      Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
