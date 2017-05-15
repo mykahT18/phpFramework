@@ -29,7 +29,7 @@
         ?>
       </ul>
      <span style="color:red"><?=@$_REQUEST["msg"]?$_REQUEST["msg"]: '';?></span>
-        <?php if($_SESSION && $_SESSION["loggedin"]==1){ ?>
+        <?php if(@$_SESSION && @$_SESSION["loggedin"]==1){ ?>
           <form class="navbar-form navbar-right">
             <a href="/profile">Profile</a>
             <a href="/auth/logout">Logout</a>

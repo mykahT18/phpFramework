@@ -21,10 +21,12 @@ class welcome extends AppController{
 		$this->getView("navigation", $menu, $page);
 	}
 	function getContact(){
-		$style = '<link rel="stylesheet" href="../assets/css/carousel.css">';
 		$this->getView("header");
 		$this->GenerateNav('contact');
-		$this->getView("contact", $style);
+		$random = substr( md5(rand()), 0, 7);
+		$_SESSION['captcha']= $random;
+		// var_dump($_SESSION['captcha']);
+		$this->getView("contact",array("cap"=>$random, "style"=> '<link rel="stylesheet" href="../assets/css/carousel.css">'));
 		$this->getView("footer");
 	}
 	function getApi(){
@@ -42,16 +44,33 @@ class welcome extends AppController{
 		$this->getView("footer");
 
 	}
-
 	function reciveContact(){
 		$this->getView("header");
-		// $this->GenerateNav();
-		var_dump($_POST);
-		if($_POST["name"]!="" && $_POST["subject"]!="" ){
-			echo "<h1>Your message was sent!</h1>";
+		var_dump($_SESSION["captcha"]);
+		if($_POST["captcha"]== $_SESSION["captcha"]){
+
+			if(!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
+
+			echo "Email invalid";
+
+			echo "<br><a href='/welcome/getcontact'>Click here to go back</a>";
+			}else{
+
+				echo "Email valid";
+			}
 		}else{
-			echo "<h1>You didn't fill in all the information.</h1>";
-		}
+			echo "Invalid captcha";
+
+			echo "<br><a href='/welcome/getContact'>Click here to go back</a>";
+
+		}	
+
+		// 
+		// if($_POST["name"]!="" && $_POST["subject"]!="" ){
+		// 	echo "<h1>Your message was sent!</h1>";
+		// }else{
+		// 	echo "<h1>You didn't fill in all the information.</h1>";
+		// }
 
 	}
 	function checkLogin(){
